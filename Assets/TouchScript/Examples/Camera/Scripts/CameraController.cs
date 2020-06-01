@@ -13,16 +13,17 @@ namespace TouchScript.Examples.CameraControl
         public ScreenTransformGesture TwoFingerMoveGesture;
         public ScreenTransformGesture ManipulationGesture;
         public float PanSpeed = 200f;
-        public float RotationSpeed = 200f;
+        public float RotationSpeed = 1f;
         public float ZoomSpeed = 10f;
+        public float actualYRotation = 0f;
 
         private Transform pivot;
-        private Transform cam;
+        //private Transform cam;
 
         private void Awake()
         {
             pivot = transform.Find("Pivot");
-            cam = transform.Find("Pivot/Camera");
+            //cam = transform.Find("Pivot/Camera");
         }
 
         private void OnEnable()
@@ -35,21 +36,35 @@ namespace TouchScript.Examples.CameraControl
         {
             TwoFingerMoveGesture.Transformed -= twoFingerTransformHandler;
             ManipulationGesture.Transformed -= manipulationTransformedHandler;
+
         }
 
         private void manipulationTransformedHandler(object sender, System.EventArgs e)
         {
-            var rotation = Quaternion.Euler(ManipulationGesture.DeltaPosition.y/Screen.height*RotationSpeed,
-                -ManipulationGesture.DeltaPosition.x/Screen.width*RotationSpeed,
-                ManipulationGesture.DeltaRotation);
-            pivot.localRotation *= rotation;
-            cam.transform.localPosition += Vector3.forward*(ManipulationGesture.DeltaScale - 1f)*ZoomSpeed;
-        }
+            var rotation = Quaternion.Euler(ManipulationGesture.DeltaPosition.y/Screen.height*RotationSpeed, -ManipulationGesture.DeltaPosition.x/Screen.width*RotationSpeed,  ManipulationGesture.DeltaRotation);
+            //pivot.localRotation *= rotation;
+            //cam.transform.localPosition += Vector3.forward*(ManipulationGesture.DeltaScale - 1f)*ZoomSpeed;
 
+           // Debug.Log(ManipulationGesture.DeltaPosition.x/Screen.width);
+
+            //float roationScale = 200f;
+            float nextYRotation = transform.localRotation.eulerAngles.y + ManipulationGesture.DeltaPosition.x / Screen.width * RotationSpeed;
+            rotationCalculation(nextYRotation);
+            pivot.transform.rotation = Quaternion.Euler(0f, nextYRotation, 0f);
+           
+        }
+        private void rotationCalculation(float rotationValue)
+        {
+            actualYRotation = actualYRotation + rotationValue;
+            if (actualYRotation < -90)
+            {
+                Debug.Log("Hit Border");
+            }
+        }
 
         private void twoFingerTransformHandler(object sender, System.EventArgs e)
         {
-            pivot.localPosition += pivot.rotation*TwoFingerMoveGesture.DeltaPosition*PanSpeed;
+            //pivot.localPosition += pivot.rotation*TwoFingerMoveGesture.DeltaPosition*PanSpeed;
         }
     }
 }
