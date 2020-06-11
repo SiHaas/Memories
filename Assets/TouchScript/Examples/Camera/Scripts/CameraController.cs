@@ -18,12 +18,12 @@ namespace TouchScript.Examples.CameraControl
         public float actualYRotation = 0f;
 
         private Transform pivot;
-        //private Transform cam;
+        private Transform cam;
 
         private void Awake()
         {
             pivot = transform.Find("Pivot");
-            //cam = transform.Find("Pivot/Camera");
+            cam = transform.Find("Pivot/Camera");
         }
 
         private void OnEnable()
@@ -48,17 +48,43 @@ namespace TouchScript.Examples.CameraControl
            // Debug.Log(ManipulationGesture.DeltaPosition.x/Screen.width);
 
             //float roationScale = 200f;
-            float nextYRotation = transform.localRotation.eulerAngles.y + ManipulationGesture.DeltaPosition.x / Screen.width * RotationSpeed;
+            float nextYRotation = cam.transform.localRotation.eulerAngles.y + ManipulationGesture.DeltaPosition.x / Screen.width * RotationSpeed;
+            Debug.Log(nextYRotation);
             rotationCalculation(nextYRotation);
-            pivot.transform.rotation = Quaternion.Euler(0f, nextYRotation, 0f);
+            
            
         }
         private void rotationCalculation(float rotationValue)
         {
-            actualYRotation = actualYRotation + rotationValue;
-            if (actualYRotation < -90)
+            int lastMovement = 0; 
+            //Debug.Log(rotationValue);
+            //actualYRotation = actualYRotation + rotationValue;
+            //Debug.Log(actualYRotation);
+            if (rotationValue < 390 && rotationValue > 300 )
             {
-                Debug.Log("Hit Border");
+                lastMovement = 1;
+                Debug.Log("left area");
+                cam.transform.rotation = Quaternion.Euler(0f, rotationValue, 0f);
+                
+            } else if (rotationValue > -30 && rotationValue < 60)
+            {
+                lastMovement = 2;
+                Debug.Log("right area");
+                cam.transform.rotation = Quaternion.Euler(0f, rotationValue, 0f);
+            } else
+            {
+                if (lastMovement == 1)
+                {
+                    if (rotationValue > 300)
+                    {
+                        //cam.transform.rotation = Quaternion.Euler(0f, rotationValue, 0f);
+                    }
+                    
+                } else if (lastMovement == 2)
+                    if (rotationValue < 60)
+                    {
+                        //cam.transform.rotation = Quaternion.Euler(0f, rotationValue, 0f);
+                    }
             }
         }
 
