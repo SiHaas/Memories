@@ -38,7 +38,7 @@ public class SceneLogic : MonoBehaviour
     private void TestEnvironmentSpawnFuction(int z)
     {
         
-        Instantiate(testEnvironment, new Vector3(0, 0, z), Quaternion.identity);
+        //Instantiate(testEnvironment, new Vector3(0, 0, z), Quaternion.identity);
         Debug.Log("spawn triggered");
     }
 

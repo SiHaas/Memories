@@ -5,6 +5,33 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnTestEnvironment
+  - VG_Straight
+  - VG_Right
+  - VG_Left
+  - VB_Straight
+  - VB_Right
+  - VB_Left
+  - VF_Straight
+  - VF_Right
+  - VF_Left
+  - VS_Straight
+  - VS_Right
+  - VS_Left
+  - VC_Straight
+  - VC_Right
+  - VC_Left
+  - EG_Straight
+  - EG_Right
+  - EG_Left
+  - EC_Straight
+  - EC_Right
+  - EC_Left
+  - EP_Straight
+  - EP_Right
+  - EP_Left
+  - EN_Straight
+  - EN_Right
+  - EN_Left
   layers:
   - Default
   - TransparentFX
