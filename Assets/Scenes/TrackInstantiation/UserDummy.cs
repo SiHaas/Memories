@@ -41,7 +41,8 @@ public class UserDummy : MonoBehaviour
         transform.position = transform.position + direction * Speed;
     }
 
-    private Vector3 direction = new Vector3(0f, 0f, -1f);
+    [SerializeField]
+    private Vector3 direction = new Vector3(-1f, 0f, 0f);
 
     private enum SelectedDirection
     {

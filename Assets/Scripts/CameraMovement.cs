@@ -81,7 +81,7 @@ namespace TouchScript.Gestures.TransformGestures
                 rotationValueX = 40;
             }
             Debug.Log(rotationValueX);
-            playerCamera.transform.rotation = Quaternion.Euler(rotationValueX, rotationValueY, 0f);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationValueX, rotationValueY, 0f);
             //else
             //{
             //if (lastMovement == 1)

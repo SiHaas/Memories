@@ -20,7 +20,7 @@ public class TrackManager : MonoBehaviour
 
     private List<Track> tracks;
 
-    private Vector3 crossPoint = new Vector3(0f, 0f, 0f); //(-25f, 0f, 0f)
+    private Vector3 crossPoint = new Vector3(-25f, 0f, 0f);
 
 
     private void Awake()
@@ -39,7 +39,6 @@ public class TrackManager : MonoBehaviour
 
     private void OnInstantiationTriggerEntered(Track enteredTrack)
     {
-        //Debug.Log("Triggered");
         // generate new tracks
         List<Track> newTracks = InstantiateNextTracks(enteredTrack);
 
@@ -66,13 +65,13 @@ public class TrackManager : MonoBehaviour
         List<Track> tracks = new List<Track>();
         if (track.Right != null)
         {
-            tracks.Add(AddTrack(GetTrackPrefab(), track, track.Right, track.yAngle)); //+ 45f
+            tracks.Add(AddTrack(GetTrackPrefab(), track, track.Right, track.yAngle + 45f));
         }
         if (track.Left != null)
         {
-            tracks.Add(AddTrack(GetTrackPrefab(), track, track.Left, track.yAngle)); // - 45f
+            tracks.Add(AddTrack(GetTrackPrefab(), track, track.Left, track.yAngle - 45f));
         }
-        tracks.Add(AddTrack(GetTrackPrefab(), track, track.Forward, track.yAngle)); //, 12.5f
+        tracks.Add(AddTrack(GetTrackPrefab(), track, track.Forward, track.yAngle, 12.5f));
         return tracks;
     }
 
@@ -80,7 +79,7 @@ public class TrackManager : MonoBehaviour
     {
         // get point reference of the trackReference to place the new track
         Vector3 trackCrossPoint = trackReference.transform.position + Quaternion.Euler(0f, trackReference.yAngle, 0f) * crossPoint;
-        
+
         float trackHalfLength = 35f;
 
         Vector3 directionNormalized = Vector3.Normalize(trackCrossPoint - trackTarget.position);

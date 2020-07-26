@@ -1072,7 +1072,7 @@ GameObject:
   - component: {fileID: 2736568302044571725}
   - component: {fileID: 3622992046091222528}
   - component: {fileID: 9199149741917329867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: InstantiationTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1320,7 +1320,7 @@ GameObject:
   - component: {fileID: 382748166312941222}
   - component: {fileID: 6133022277264823639}
   - component: {fileID: 2342691925225717172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DirectionTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
