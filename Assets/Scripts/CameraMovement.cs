@@ -14,12 +14,13 @@ namespace TouchScript.Gestures.TransformGestures
         public float ZoomSpeed = 10f;
         public float actualYRotation = 0f;
 
+        [SerializeField]
         private Transform playerCamera;
 
         private void Awake()
         {
             //playerCamera = transform.Find("Scene/Camera");
-            playerCamera = transform;
+            //playerCamera = transform;
         }
 
         private void OnEnable()
