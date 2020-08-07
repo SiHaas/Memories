@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UserDummy : MonoBehaviour
 {
     [Range(0f, 1.5f)]
-    public float Speed = 1f;
+    public float Speed = 4f;
     private float temp;
     private Coroutine rotationCoroutine;
 
@@ -19,6 +19,14 @@ public class UserDummy : MonoBehaviour
     private Button forwardButton;
     [SerializeField]
     private Button righttButton;
+
+    public static int topic = 0; //0 vacation, 1 elementary
+    public static int number = 0; //0 started, 1 continued
+    public static int subbiomeVacation = 0; //0 VB, 1 VF, 2 VC, 3 VS
+    public static int subbiomeElementary = 0; //0 EN, 1 EC, 2 EP
+    public static int generalChecker = 1; //0 not general, 1 general 
+    public static int mainTrack = 0; //current track as numbers 0, 1, 2, 3
+
 
     private void Start()
     {
@@ -66,6 +74,12 @@ public class UserDummy : MonoBehaviour
     private Vector3 referencePosition;
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Topic" + topic);
+        Debug.Log("Number" + number);
+        Debug.Log("Vacation" + subbiomeVacation);
+        Debug.Log("Elementary" + subbiomeElementary);
+        Debug.Log("General" + generalChecker);
+        Debug.Log("MainTrack" + mainTrack);
         Track track = other.GetComponentInParent<Track>();
         if (track != null)
         {
@@ -118,7 +132,8 @@ public class UserDummy : MonoBehaviour
         if (selectedDirection == SelectedDirection.Right) // right
         {
             dir = GetDirection(referencePosition, currentTrack.Right.position);
-
+            Debug.Log("righttest");
+            changeRightTrack();
             // adjust rotation
             if (rotationCoroutine != null)
             {
@@ -129,6 +144,7 @@ public class UserDummy : MonoBehaviour
         else if (selectedDirection == SelectedDirection.Left) // left
         {
             dir = GetDirection(referencePosition, currentTrack.Left.position);
+            changeLeftTrack();
 
             // adjust rotation
             if (rotationCoroutine != null)
@@ -140,6 +156,7 @@ public class UserDummy : MonoBehaviour
         else // forward
         {
             dir = GetDirection(referencePosition, currentTrack.Forward.position);
+            changeForwardTrack();
         }
         
         // adjust position
@@ -180,6 +197,111 @@ public class UserDummy : MonoBehaviour
                 count -= stepSize;
                 yield return new WaitForEndOfFrame();
             }
+        }
+    }
+    void changeRightTrack()
+    {
+        if (topic == 0)
+        {
+            topic = 1;
+            generalChecker = 1;
+            number = 0;
+            mainTrack = 0;
+            //subbiomeElementary = 0;
+            if (subbiomeVacation < 3)
+            {
+                subbiomeVacation = subbiomeVacation + 1;
+            }
+            else
+            {
+                subbiomeVacation = 0;
+            }
+
+            if (subbiomeElementary < 2)
+            {
+                subbiomeElementary = subbiomeElementary + 1;
+            }
+            else
+            {
+                subbiomeElementary = 0;
+            }
+
+
+
+        }
+        else
+        {
+            topic = 0;
+            generalChecker = 1;
+            mainTrack = 0;
+            number = 0;
+            //subbiomeVacation = 0;
+            if (subbiomeElementary < 2)
+            {
+                subbiomeElementary = subbiomeElementary + 1;
+            }
+            else
+            {
+                subbiomeElementary = 0;
+            }
+
+            if (subbiomeVacation < 3)
+            {
+                subbiomeVacation = subbiomeVacation + 1;
+            }
+            else
+            {
+                subbiomeVacation = 0;
+            }
+        }
+    }
+
+    void changeLeftTrack()
+    {
+        Debug.Log("changed Left");
+        generalChecker = 0;
+        if (topic == 0)
+        {
+            number = 0;
+            if (subbiomeVacation < 3)
+            {
+                mainTrack = subbiomeVacation;
+                subbiomeVacation = subbiomeVacation + 1;
+                
+            }
+            else
+            {
+                mainTrack = subbiomeVacation;
+                subbiomeVacation = 0;
+                
+            }
+        }else
+        {
+            number = 0;
+            if (subbiomeElementary < 2)
+            {
+                mainTrack = subbiomeElementary;
+                subbiomeElementary = subbiomeElementary + 1;
+                
+            }
+            else
+            {
+                mainTrack = subbiomeElementary;
+                subbiomeElementary = 0;
+                
+            }
+        }
+    }
+
+    void changeForwardTrack()
+    {
+        if (number == 0)
+        {
+            number = 1;
+        }
+        else
+        {
+            number = 0;
         }
     }
 }

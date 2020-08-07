@@ -6,9 +6,47 @@ using UnityEngine;
 public class TrackManager : MonoBehaviour
 {
     public static Action<Track> InstantiationEvent;
+    private GameObject nextTrackRight;
+    private GameObject nextTrackLeft;
+    private GameObject nextTrackForward;
 
     [SerializeField]
-    private GameObject trackCrossingPrefab;
+    private GameObject VG0;
+    [SerializeField]
+    private GameObject VG1;
+    [SerializeField]
+    private GameObject VB0;
+    [SerializeField]
+    private GameObject VB1;
+    [SerializeField]
+    private GameObject VF0;
+    [SerializeField]
+    private GameObject VF1;
+    [SerializeField]
+    private GameObject VC0;
+    [SerializeField]
+    private GameObject VC1;
+    [SerializeField]
+    private GameObject VS0;
+    [SerializeField]
+    private GameObject VS1;
+    [SerializeField]
+    private GameObject EG0;
+    [SerializeField]
+    private GameObject EG1;
+    [SerializeField]
+    private GameObject EN0;
+    [SerializeField]
+    private GameObject EN1;
+    [SerializeField]
+    private GameObject EC0;
+    [SerializeField]
+    private GameObject EC1;
+    [SerializeField]
+    private GameObject EP0;
+    [SerializeField]
+    private GameObject EP1;
+
 
     [SerializeField]
     private List<GameObject> trackPrefabs;
@@ -60,18 +98,18 @@ public class TrackManager : MonoBehaviour
         tracks.AddRange(newTracks);
     }
 
-    private List<Track> InstantiateNextTracks(Track track)
+    private List<Track> InstantiateNextTracks(Track track) //hier könnte ich pro Richtung unterschiedliche Funktionen verwenden)
     {
         List<Track> tracks = new List<Track>();
-        if (track.Right != null)
+        if (track.Right != null) //rechts
         {
-            tracks.Add(AddTrack(GetTrackPrefab(), track, track.Right, track.yAngle + 45f));
+            tracks.Add(AddTrack(GetTrackPrefabRight(), track, track.Right, track.yAngle + 45f));
         }
-        if (track.Left != null)
+        if (track.Left != null) //links
         {
-            tracks.Add(AddTrack(GetTrackPrefab(), track, track.Left, track.yAngle - 45f));
+            tracks.Add(AddTrack(GetTrackPrefabLeft(), track, track.Left, track.yAngle - 45f));
         }
-        tracks.Add(AddTrack(GetTrackPrefab(), track, track.Forward, track.yAngle, 12.5f));
+        tracks.Add(AddTrack(GetTrackPrefabForward(), track, track.Forward, track.yAngle, 12.5f)); //geradeaus
         return tracks;
     }
 
@@ -94,15 +132,167 @@ public class TrackManager : MonoBehaviour
         return tr;
     }
 
-    private GameObject GetTrackPrefab()
+    private GameObject GetTrackPrefabRight()
     {
         // ToDo get track prefabs 
 
+        if (UserDummy.topic == 0)
+        {
+            nextTrackRight = EG0;
+        }
+        else
+        {
+            nextTrackRight = VG0;
+        }
+
+        return nextTrackRight;
+    }
+    private GameObject GetTrackPrefabLeft()
+    {
+        // ToDo get track prefabs 
+        if (UserDummy.topic == 0)
+        {
+            switch (UserDummy.subbiomeVacation)
+            {
+                case 0:
+                    nextTrackLeft = VB0;
+                    break;
+                case 1:
+                    nextTrackLeft = VF0;
+                    break;
+                case 2:
+                    nextTrackLeft = VC0;
+                    break;
+                case 3:
+                    nextTrackLeft = VS0;
+                    break;
+            }
+        }
+        else
+        {
+            switch (UserDummy.subbiomeElementary)
+            {
+                case 0:
+                    nextTrackLeft = EN0;
+                    break;
+                case 1:
+                    nextTrackLeft = EC0;
+                    break;
+                case 2:
+                    nextTrackLeft = EP0;
+                    break;
+            }
+        }
+
+        return nextTrackLeft;
+
+
+    }
+
+    private GameObject GetTrackPrefabForward()
+    {
+        // ToDo get track prefabs 
+        if (UserDummy.topic == 0)
+        {
+            if (UserDummy.number == 0)
+            {
+                switch (UserDummy.mainTrack)
+                {
+                    case 0:
+                        nextTrackForward = VB1;
+                        break;
+                    case 1:
+                        nextTrackForward = VF1;
+                        break;
+                    case 2:
+                        nextTrackForward = VC1;
+                        break;
+                    case 3:
+                        nextTrackForward = VS1;
+                        break;
+                }
+                if (UserDummy.generalChecker == 1)
+                {
+                    nextTrackForward = VG1;
+                }
+            }
+            else
+            {
+                switch (UserDummy.mainTrack)
+                {
+                    case 0:
+                        nextTrackForward = VB0;
+                        break;
+                    case 1:
+                        nextTrackForward = VF0;
+                        break;
+                    case 2:
+                        nextTrackForward = VC0;
+                        break;
+                    case 3:
+                        nextTrackForward = VS0;
+                        break;
+                }
+                if (UserDummy.generalChecker == 1)
+                {
+                    nextTrackForward = VG0;
+                }
+            }
+        }
+        else
+        {
+            if (UserDummy.number == 0)
+            {
+                switch (UserDummy.mainTrack)
+                {
+                    case 0:
+                        nextTrackForward = EN1;
+                        break;
+                    case 1:
+                        nextTrackForward = EC1;
+                        break;
+                    case 2:
+                        nextTrackForward = EP1;
+                        break;
+                }
+                if (UserDummy.generalChecker == 1)
+                {
+                    nextTrackForward = EG1;
+                }
+            }
+            else
+            {
+                switch (UserDummy.mainTrack)
+                {
+                    case 0:
+                        nextTrackForward = EN0;
+                        break;
+                    case 1:
+                        nextTrackForward = EC0;
+                        break;
+                    case 2:
+                        nextTrackForward = EP0;
+                        break;
+                }
+                if (UserDummy.generalChecker == 1)
+                {
+                    nextTrackForward = EG0;
+                }
+            }
+
+        }
 
 
 
 
-        return trackCrossingPrefab;
+            return nextTrackForward;
     }
 
 }
+
+
+//public int topic = 0; //0 vacation, 1 elementary
+//public int number = 0; //0 started, 1 continued
+//public int subbiomeVacation = 0; //0 VB, 1 VF, 2 VC, 3 VS
+//public int subbiomeElementary = 0; //0 EN, 1 EC, 2 EP
+//public static int generalChecker = 1; //0 not general, 1 general
