@@ -200,20 +200,25 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForward = VB1;
+                        SceneLogic.VB0.Invoke();
                         break;
                     case 1:
                         nextTrackForward = VF1;
+                        SceneLogic.VF0.Invoke();
                         break;
                     case 2:
                         nextTrackForward = VC1;
+                        SceneLogic.VC0.Invoke();
                         break;
                     case 3:
                         nextTrackForward = VS1;
+                        SceneLogic.VS0.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForward = VG1;
+                    SceneLogic.VG0.Invoke();
                 }
             }
             else
@@ -222,20 +227,25 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForward = VB0;
+                        SceneLogic.VB1.Invoke();
                         break;
                     case 1:
                         nextTrackForward = VF0;
+                        SceneLogic.VF1.Invoke();
                         break;
                     case 2:
                         nextTrackForward = VC0;
+                        SceneLogic.VC1.Invoke();
                         break;
                     case 3:
                         nextTrackForward = VS0;
+                        SceneLogic.VS1.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForward = VG0;
+                    SceneLogic.VG1.Invoke();
                 }
             }
         }
@@ -247,17 +257,21 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForward = EN1;
+                        SceneLogic.EN0.Invoke();
                         break;
                     case 1:
                         nextTrackForward = EC1;
+                        SceneLogic.EC0.Invoke();
                         break;
                     case 2:
                         nextTrackForward = EP1;
+                        SceneLogic.EP0.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForward = EG1;
+                    SceneLogic.EG0.Invoke();
                 }
             }
             else
@@ -266,17 +280,21 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForward = EN0;
+                        SceneLogic.EN1.Invoke();
                         break;
                     case 1:
                         nextTrackForward = EC0;
+                        SceneLogic.EC1.Invoke();
                         break;
                     case 2:
                         nextTrackForward = EP0;
+                        SceneLogic.EP1.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForward = EG0;
+                    SceneLogic.EG1.Invoke();
                 }
             }
 
