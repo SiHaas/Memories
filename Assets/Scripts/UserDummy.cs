@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum SelectedDirection
+{
+    Forward,
+    Left,
+    Right
+}
+
 public class UserDummy : MonoBehaviour
 {
     [Range(0f, 1.5f)]
@@ -37,7 +44,7 @@ public class UserDummy : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(rotationCoroutine != null)
+        if (rotationCoroutine != null)
         {
             StopCoroutine(rotationCoroutine);
             rotationCoroutine = null;
@@ -52,12 +59,7 @@ public class UserDummy : MonoBehaviour
     [SerializeField]
     private Vector3 direction = new Vector3(-1f, 0f, 0f);
 
-    private enum SelectedDirection
-    {
-        Forward,
-        Left, 
-        Right       
-    }
+
 
     private void OnButtonPressed(SelectedDirection selected)
     {
@@ -99,7 +101,7 @@ public class UserDummy : MonoBehaviour
                 if (RandomDirection)
                 {
                     float val = Random.Range(0f, 1f);
-                    
+
                     if (val > 0.66f) // right
                     {
                         selectedDirection = SelectedDirection.Right;
@@ -119,9 +121,9 @@ public class UserDummy : MonoBehaviour
                     righttButton.gameObject.SetActive(true);
                     forwardButton.gameObject.SetActive(true);
                 }
-                
+
                 return;
-            }        
+            }
         }
     }
 
@@ -158,7 +160,10 @@ public class UserDummy : MonoBehaviour
             dir = GetDirection(referencePosition, currentTrack.Forward.position);
             changeForwardTrack();
         }
-        
+
+        // invoke selected direction at trackManager
+        TrackManager.OnDirectionSelectedEvent.Invoke(selectedDirection);
+
         // adjust position
         transform.position = referencePosition;
 
@@ -180,9 +185,9 @@ public class UserDummy : MonoBehaviour
     {
         float stepSize = 0.75f;
         float count = 0f; // hilfsvariable, da Unity intern die -45 gern in 315 etc übersetzt, machts das manchmal etwas nervig..
-        if(delta > 0)
+        if (delta > 0)
         {
-            while(count < delta)
+            while (count < delta)
             {
                 transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y + stepSize, 0f);
                 count += stepSize;
@@ -191,7 +196,7 @@ public class UserDummy : MonoBehaviour
         }
         else
         {
-            while(count > delta)
+            while (count > delta)
             {
                 transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y - stepSize, 0f);
                 count -= stepSize;
@@ -267,28 +272,29 @@ public class UserDummy : MonoBehaviour
             {
                 mainTrack = subbiomeVacation;
                 subbiomeVacation = subbiomeVacation + 1;
-                
+
             }
             else
             {
                 mainTrack = subbiomeVacation;
                 subbiomeVacation = 0;
-                
+
             }
-        }else
+        }
+        else
         {
             number = 0;
             if (subbiomeElementary < 2)
             {
                 mainTrack = subbiomeElementary;
                 subbiomeElementary = subbiomeElementary + 1;
-                
+
             }
             else
             {
                 mainTrack = subbiomeElementary;
                 subbiomeElementary = 0;
-                
+
             }
         }
     }

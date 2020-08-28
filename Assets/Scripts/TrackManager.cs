@@ -6,6 +6,11 @@ using UnityEngine;
 public class TrackManager : MonoBehaviour
 {
     public static Action<Track> InstantiationEvent;
+    public static Action<SelectedDirection> OnDirectionSelectedEvent;
+    private GameObject nextTrackRightPrefab;
+    private GameObject nextTrackLeftPrefab;
+    private GameObject nextTrackForwardPrefab;
+
     private GameObject nextTrackRight;
     private GameObject nextTrackLeft;
     private GameObject nextTrackForward;
@@ -70,9 +75,16 @@ public class TrackManager : MonoBehaviour
         }
     }
 
-    void Start()
+    private void Start()
     {
         InstantiationEvent += OnInstantiationTriggerEntered;
+        OnDirectionSelectedEvent += OnDirectionSelectedActiveTrack;
+    }
+
+    private void OnDestroy()
+    {
+        InstantiationEvent -= OnInstantiationTriggerEntered;
+        OnDirectionSelectedEvent -= OnDirectionSelectedActiveTrack;
     }
 
     private void OnInstantiationTriggerEntered(Track enteredTrack)
@@ -101,15 +113,22 @@ public class TrackManager : MonoBehaviour
     private List<Track> InstantiateNextTracks(Track track) //hier könnte ich pro Richtung unterschiedliche Funktionen verwenden)
     {
         List<Track> tracks = new List<Track>();
+        Track newTrack = null;
         if (track.Right != null) //rechts
         {
-            tracks.Add(AddTrack(GetTrackPrefabRight(), track, track.Right, track.yAngle + 45f));
+            newTrack = AddTrack(GetTrackPrefabRight(), track, track.Right, track.yAngle + 45f);
+            nextTrackRight = newTrack.gameObject;
+            tracks.Add(newTrack);
         }
         if (track.Left != null) //links
         {
-            tracks.Add(AddTrack(GetTrackPrefabLeft(), track, track.Left, track.yAngle - 45f));
+            newTrack = AddTrack(GetTrackPrefabLeft(), track, track.Left, track.yAngle - 45f);
+            nextTrackLeft = newTrack.gameObject;
+            tracks.Add(newTrack);
         }
-        tracks.Add(AddTrack(GetTrackPrefabForward(), track, track.Forward, track.yAngle, 12.5f)); //geradeaus
+        newTrack = AddTrack(GetTrackPrefabForward(), track, track.Forward, track.yAngle, 12.5f);
+        nextTrackForward = newTrack.gameObject;
+        tracks.Add(newTrack); //geradeaus
         return tracks;
     }
 
@@ -128,6 +147,7 @@ public class TrackManager : MonoBehaviour
 
         Track tr = track.GetComponent<Track>();
         tr.yAngle = yAngle; // we store the new angle to this track, because it's important to know the angle for further track generation
+        track.SetActive(false);
 
         return tr;
     }
@@ -138,15 +158,16 @@ public class TrackManager : MonoBehaviour
 
         if (UserDummy.topic == 0)
         {
-            nextTrackRight = EG0;
+            nextTrackRightPrefab = EG0;
         }
         else
         {
-            nextTrackRight = VG0;
+            nextTrackRightPrefab = VG0;
         }
 
-        return nextTrackRight;
+        return nextTrackRightPrefab;
     }
+
     private GameObject GetTrackPrefabLeft()
     {
         // ToDo get track prefabs 
@@ -155,16 +176,16 @@ public class TrackManager : MonoBehaviour
             switch (UserDummy.subbiomeVacation)
             {
                 case 0:
-                    nextTrackLeft = VB0;
+                    nextTrackLeftPrefab = VB0;
                     break;
                 case 1:
-                    nextTrackLeft = VF0;
+                    nextTrackLeftPrefab = VF0;
                     break;
                 case 2:
-                    nextTrackLeft = VC0;
+                    nextTrackLeftPrefab = VC0;
                     break;
                 case 3:
-                    nextTrackLeft = VS0;
+                    nextTrackLeftPrefab = VS0;
                     break;
             }
         }
@@ -173,18 +194,18 @@ public class TrackManager : MonoBehaviour
             switch (UserDummy.subbiomeElementary)
             {
                 case 0:
-                    nextTrackLeft = EN0;
+                    nextTrackLeftPrefab = EN0;
                     break;
                 case 1:
-                    nextTrackLeft = EC0;
+                    nextTrackLeftPrefab = EC0;
                     break;
                 case 2:
-                    nextTrackLeft = EP0;
+                    nextTrackLeftPrefab = EP0;
                     break;
             }
         }
 
-        return nextTrackLeft;
+        return nextTrackLeftPrefab;
 
 
     }
@@ -199,25 +220,25 @@ public class TrackManager : MonoBehaviour
                 switch (UserDummy.mainTrack)
                 {
                     case 0:
-                        nextTrackForward = VB1;
+                        nextTrackForwardPrefab = VB1;
                         SceneLogic.VB0.Invoke();
                         break;
                     case 1:
-                        nextTrackForward = VF1;
+                        nextTrackForwardPrefab = VF1;
                         SceneLogic.VF0.Invoke();
                         break;
                     case 2:
-                        nextTrackForward = VC1;
+                        nextTrackForwardPrefab = VC1;
                         SceneLogic.VC0.Invoke();
                         break;
                     case 3:
-                        nextTrackForward = VS1;
+                        nextTrackForwardPrefab = VS1;
                         SceneLogic.VS0.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
-                    nextTrackForward = VG1;
+                    nextTrackForwardPrefab = VG1;
                     SceneLogic.VG0.Invoke();
                 }
             }
@@ -226,25 +247,25 @@ public class TrackManager : MonoBehaviour
                 switch (UserDummy.mainTrack)
                 {
                     case 0:
-                        nextTrackForward = VB0;
+                        nextTrackForwardPrefab = VB0;
                         SceneLogic.VB1.Invoke();
                         break;
                     case 1:
-                        nextTrackForward = VF0;
+                        nextTrackForwardPrefab = VF0;
                         SceneLogic.VF1.Invoke();
                         break;
                     case 2:
-                        nextTrackForward = VC0;
+                        nextTrackForwardPrefab = VC0;
                         SceneLogic.VC1.Invoke();
                         break;
                     case 3:
-                        nextTrackForward = VS0;
+                        nextTrackForwardPrefab = VS0;
                         SceneLogic.VS1.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
-                    nextTrackForward = VG0;
+                    nextTrackForwardPrefab = VG0;
                     SceneLogic.VG1.Invoke();
                 }
             }
@@ -256,21 +277,21 @@ public class TrackManager : MonoBehaviour
                 switch (UserDummy.mainTrack)
                 {
                     case 0:
-                        nextTrackForward = EN1;
+                        nextTrackForwardPrefab = EN1;
                         SceneLogic.EN0.Invoke();
                         break;
                     case 1:
-                        nextTrackForward = EC1;
+                        nextTrackForwardPrefab = EC1;
                         SceneLogic.EC0.Invoke();
                         break;
                     case 2:
-                        nextTrackForward = EP1;
+                        nextTrackForwardPrefab = EP1;
                         SceneLogic.EP0.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
-                    nextTrackForward = EG1;
+                    nextTrackForwardPrefab = EG1;
                     SceneLogic.EG0.Invoke();
                 }
             }
@@ -279,33 +300,56 @@ public class TrackManager : MonoBehaviour
                 switch (UserDummy.mainTrack)
                 {
                     case 0:
-                        nextTrackForward = EN0;
+                        nextTrackForwardPrefab = EN0;
                         SceneLogic.EN1.Invoke();
                         break;
                     case 1:
-                        nextTrackForward = EC0;
+                        nextTrackForwardPrefab = EC0;
                         SceneLogic.EC1.Invoke();
                         break;
                     case 2:
-                        nextTrackForward = EP0;
+                        nextTrackForwardPrefab = EP0;
                         SceneLogic.EP1.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
-                    nextTrackForward = EG0;
+                    nextTrackForwardPrefab = EG0;
                     SceneLogic.EG1.Invoke();
                 }
             }
 
         }
-
-
-
-
-            return nextTrackForward;
+        return nextTrackForwardPrefab;
     }
 
+    private void OnDirectionSelectedActiveTrack(SelectedDirection direction)
+    {
+        switch (direction)
+        {
+            case SelectedDirection.Forward:
+                StartCoroutine(ActivateTrack(nextTrackForward, 2f));
+                break;
+            case SelectedDirection.Right:
+                StartCoroutine(ActivateTrack(nextTrackRight, 2f));
+                break;
+            case SelectedDirection.Left:
+                StartCoroutine(ActivateTrack(nextTrackLeft, 2f));
+                break;
+        }
+    }
+
+    /// <summary>
+    /// activates the track of the selected direction after a specified delay
+    /// </summary>
+    /// <param name="trackObject">the track' gameobject to activate</param>
+    /// <param name="delay">the amount of time to wait until activation</param>
+    /// <returns></returns>
+    private IEnumerator ActivateTrack(GameObject trackObject, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        trackObject.SetActive(true);
+    }
 }
 
 
