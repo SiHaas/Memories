@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TouchScript.Gestures;
 
-public class TouchCheck : MonoBehaviour { 
+public class TouchCheck : MonoBehaviour {
 
-     public TapGesture TippyTap;
-    public GameObject Cat;
+    [SerializeField]
+    private TapGesture TippyTap;
+
+    [SerializeField]
+    private GameObject Cat;
+
+    [SerializeField]
+    private GameObject Trigger1Text;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +37,11 @@ public class TouchCheck : MonoBehaviour {
     private void tapped (object sender, System.EventArgs e)
     {
         Debug.Log("Tap");
-        Color colorStart = Color.red;
-        var catRenderer = Cat.GetComponent<Renderer>();
+        Trigger1Text.SetActive(true);
+        //Color colorStart = Color.red;
+        //var catRenderer = Cat.GetComponent<Renderer>();
 
-        catRenderer.material.color = Color.red;
+        //catRenderer.material.color = Color.red;
     }
         // Update is called once per frame
         void Update()
