@@ -3209,6 +3209,16 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.g
       value: 0.9622642
       objectReference: {fileID: 0}
+    - target: {fileID: 1098534687276151817, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eae1141e07375ff42b1457d660aaf9c5, type: 2}
+    - target: {fileID: 1179139914887466457, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eae1141e07375ff42b1457d660aaf9c5, type: 2}
     - target: {fileID: 2995285254574051377, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_IsActive
@@ -3339,6 +3349,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8821652522180605706, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eae1141e07375ff42b1457d660aaf9c5, type: 2}
     - target: {fileID: 8898866579690395425, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_Mesh

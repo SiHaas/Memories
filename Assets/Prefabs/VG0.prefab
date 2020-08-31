@@ -2939,6 +2939,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 672295172775222655}
     m_Modifications:
+    - target: {fileID: 1098534687276151817, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bdeca2a03a94ffd43b48da10023817dc, type: 2}
+    - target: {fileID: 1179139914887466457, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bdeca2a03a94ffd43b48da10023817dc, type: 2}
     - target: {fileID: 5833535732480942189, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2999,6 +3009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerBundle
       objectReference: {fileID: 0}
+    - target: {fileID: 8821652522180605706, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bdeca2a03a94ffd43b48da10023817dc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72674f0e331c57041b2408d6ce3be4bc, type: 3}
 --- !u!4 &5751252003021345558 stripped
