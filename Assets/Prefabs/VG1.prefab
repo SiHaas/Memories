@@ -3114,6 +3114,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 672295172775222655}
     m_Modifications:
+    - target: {fileID: 813856088095080231, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002508322247173539, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_text
+      value: Local customs
+      objectReference: {fileID: 0}
     - target: {fileID: 1098534687276151817, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3124,6 +3134,51 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: bdeca2a03a94ffd43b48da10023817dc, type: 2}
+    - target: {fileID: 1296116531827792606, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113735220445693544, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995285254574051377, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_text
+      value: A daring thing I did on vacation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064694978421295382, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_text
+      value: Strange food I ate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321084828014247669, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5833535732480942189, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_LocalPosition.x

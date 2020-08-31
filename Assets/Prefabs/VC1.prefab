@@ -3139,6 +3139,11 @@ PrefabInstance:
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1002508322247173539, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_text
+      value: Places of worship, sacred places
+      objectReference: {fileID: 0}
     - target: {fileID: 1062141168798958165, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -3164,6 +3169,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d69a1edb4498e98429e3062ee8ce064a, type: 2}
+    - target: {fileID: 1296116531827792606, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113735220445693544, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_fontColor.r
@@ -3179,6 +3194,11 @@ PrefabInstance:
       propertyPath: m_fontColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_text
+      value: Streetfood
+      objectReference: {fileID: 0}
     - target: {fileID: 5064694978421295382, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_fontColor.r
@@ -3193,6 +3213,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064694978421295382, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_text
+      value: A sense of awe
+      objectReference: {fileID: 0}
+    - target: {fileID: 5321084828014247669, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5833535732480942189, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
