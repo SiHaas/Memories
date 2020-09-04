@@ -6,12 +6,12 @@ public class SimpleFloating : MonoBehaviour
 {
 
     public bool animPos = true;
-    public Vector3 posAmplitude = Vector3.one * 2f;
-    public Vector3 posSpeed = Vector3.one * 0.2f;
+    public Vector3 posAmplitude = Vector3.one * 1;
+    public Vector3 posSpeed = Vector3.one;
 
     public bool animRot = true;
     public Vector3 rotAmplitude = Vector3.one * 10;
-    public Vector3 rotSpeed = Vector3.one * 0.13f;
+    public Vector3 rotSpeed = Vector3.one;
 
     public bool animScale = false;
     public Vector3 scaleAmplitude = Vector3.one * 0.1f;
@@ -22,6 +22,13 @@ public class SimpleFloating : MonoBehaviour
     private Vector3 origScale;
 
     private float startAnimOffset = 0;
+    private float randomXPos;
+    private float randomYPos;
+    private float randomZPos;
+    private float randomXRot;
+    private float randomYRot;
+    private float randomZRot;
+
 
 
     /**
@@ -32,8 +39,15 @@ public class SimpleFloating : MonoBehaviour
         origPos = transform.position;
         origRot = transform.eulerAngles;
         origScale = transform.localScale;
-        startAnimOffset = Random.Range(0f, 540f);        // so that the xyz anims are already offset from each other since the start
+        startAnimOffset = Random.Range(0f, 50f);        // so that the xyz anims are already offset from each other since the start
+        randomXPos = Random.Range(-0.2f, 0.2f);
+        randomYPos = Random.Range(-0.05f, 0.05f);
+        randomZPos = Random.Range(-0.2f, 0.2f);
+        randomXRot = Random.Range(-0.2f, 0.2f);
+        randomYRot = Random.Range(-0.2f, 0.2f);
+        randomZRot = Random.Range(-0.2f, 0.2f);
     }
+    
 
     /**
      * Update
@@ -44,9 +58,9 @@ public class SimpleFloating : MonoBehaviour
         if (animPos)
         {
             Vector3 pos;
-            pos.x = origPos.x + posAmplitude.x * Mathf.Sin(posSpeed.x * Time.time + startAnimOffset);
-            pos.y = origPos.y;
-            pos.z = origPos.z;
+            pos.x = origPos.x + posAmplitude.x * Mathf.Sin((posSpeed.x * randomXPos) * Time.time + startAnimOffset);
+            pos.y = origPos.y; // + posAmplitude.y * Mathf.Sin((posSpeed.y * randomYPos) * Time.time + (startAnimOffset/5));
+            pos.z = origPos.z + posAmplitude.z * Mathf.Sin((posSpeed.z * randomZPos) * Time.time + startAnimOffset);
             transform.position = pos;
         }
 
@@ -54,9 +68,9 @@ public class SimpleFloating : MonoBehaviour
         if (animRot)
         {
             Vector3 rot;
-            rot.x = origRot.x + rotAmplitude.x * Mathf.Sin(rotSpeed.x * Time.time + startAnimOffset);
-            rot.y = origRot.y + rotAmplitude.y * Mathf.Sin(rotSpeed.y * Time.time + startAnimOffset);
-            rot.z = origRot.z + rotAmplitude.z * Mathf.Sin(rotSpeed.z * Time.time + startAnimOffset);
+            rot.x = origRot.x + rotAmplitude.x * Mathf.Sin((rotSpeed.x * randomXRot) * Time.time + startAnimOffset);
+            rot.y = origRot.y + rotAmplitude.y * Mathf.Sin((rotSpeed.y * randomYRot) * Time.time + startAnimOffset);
+            rot.z = origRot.z + rotAmplitude.z * Mathf.Sin((rotSpeed.z * randomZRot) * Time.time + startAnimOffset);
             transform.eulerAngles = rot;
         }
 

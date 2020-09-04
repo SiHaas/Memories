@@ -610,6 +610,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3918033632111192091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762705049606910180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12933ecadf9202d4293c5ca543ab4c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 1
+  posAmplitude: {x: 1, y: 1, z: 1}
+  posSpeed: {x: 1, y: 1, z: 1}
+  animRot: 1
+  rotAmplitude: {x: 10, y: 10, z: 10}
+  rotSpeed: {x: 1, y: 1, z: 1}
+  animScale: 0
+  scaleAmplitude: {x: 0.1, y: 0.1, z: 0.1}
+  scaleSpeed: {x: 1, y: 1, z: 1}
 --- !u!1 &941592809305266221
 GameObject:
   m_ObjectHideFlags: 0
@@ -2045,6 +2066,27 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &5455379449906916166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189275328961083945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12933ecadf9202d4293c5ca543ab4c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 1
+  posAmplitude: {x: 1, y: 1, z: 1}
+  posSpeed: {x: 1, y: 1, z: 1}
+  animRot: 1
+  rotAmplitude: {x: 10, y: 10, z: 10}
+  rotSpeed: {x: 1, y: 1, z: 1}
+  animScale: 0
+  scaleAmplitude: {x: 0.1, y: 0.1, z: 0.1}
+  scaleSpeed: {x: 1, y: 1, z: 1}
 --- !u!1 &5118439719730537863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2200,6 +2242,27 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &944932295553937120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269346825584954365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12933ecadf9202d4293c5ca543ab4c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animPos: 1
+  posAmplitude: {x: 1, y: 1, z: 1}
+  posSpeed: {x: 1, y: 1, z: 1}
+  animRot: 1
+  rotAmplitude: {x: 10, y: 10, z: 10}
+  rotSpeed: {x: 1, y: 1, z: 1}
+  animScale: 0
+  scaleAmplitude: {x: 0.1, y: 0.1, z: 0.1}
+  scaleSpeed: {x: 1, y: 1, z: 1}
 --- !u!1 &6617230461700487823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,6 +3240,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e211aa12e7164bb4c979d8830b89f685, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719521798e71c334db736f0cfc6847d0, type: 3}
+--- !u!1 &6269346825584954365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 719521798e71c334db736f0cfc6847d0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2603323228239270644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7015034132705065454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 719521798e71c334db736f0cfc6847d0,
@@ -3418,6 +3487,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5260950525796885280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4189275328961083945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 97e3930540f7dc047b788d0411d61601,
+    type: 3}
+  m_PrefabInstance: {fileID: 5260950525796885280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8769706005597006317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3507,6 +3582,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab91991cc57d8884f953d7ada8c2023b, type: 3}
+--- !u!1 &762705049606910180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ab91991cc57d8884f953d7ada8c2023b,
+    type: 3}
+  m_PrefabInstance: {fileID: 8769706005597006317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4381709879050601207 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ab91991cc57d8884f953d7ada8c2023b,
