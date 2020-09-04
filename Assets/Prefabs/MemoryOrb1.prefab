@@ -4768,7 +4768,7 @@ GameObject:
   - component: {fileID: 5171200202595301820}
   - component: {fileID: 6312482732587840611}
   m_Layer: 0
-  m_Name: Trigger1
+  m_Name: MemoryOrb1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
