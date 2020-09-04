@@ -3101,6 +3101,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2622655703997860983, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 726ed5f823135714e88b121c58cf4e0b, type: 2}
     - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_fontColor.r
@@ -3136,6 +3141,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5644242662948812452, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 726ed5f823135714e88b121c58cf4e0b, type: 2}
     - target: {fileID: 5833535732480942189, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3191,6 +3201,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5852289414079385460, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 726ed5f823135714e88b121c58cf4e0b, type: 2}
     - target: {fileID: 6972740480867416837, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_Name
