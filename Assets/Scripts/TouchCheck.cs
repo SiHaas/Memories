@@ -14,6 +14,9 @@ public class TouchCheck : MonoBehaviour {
     [SerializeField]
     private GameObject Trigger1Text;
 
+    [SerializeField]
+    private GameObject addMemoryTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,7 @@ public class TouchCheck : MonoBehaviour {
     {
         Debug.Log("Tap");
         Trigger1Text.SetActive(true);
+        addMemoryTrigger.SetActive(true);
         //Color colorStart = Color.red;
         //var catRenderer = Cat.GetComponent<Renderer>();
 

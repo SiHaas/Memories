@@ -35,11 +35,24 @@ public class UserDummy : MonoBehaviour
     public static int mainTrack = 0; //current track as numbers 0, 1, 2, 3
 
 
+    private float tempSpeed;
+    public void StopMovement()
+    {
+        Speed = 0f;
+    }
+
+    public void StartMovement()
+    {
+        Speed = tempSpeed;
+    }
+
     private void Start()
     {
         leftButton.onClick.AddListener(() => OnButtonPressed(SelectedDirection.Left));
         righttButton.onClick.AddListener(() => OnButtonPressed(SelectedDirection.Right));
         forwardButton.onClick.AddListener(() => OnButtonPressed(SelectedDirection.Forward));
+
+        tempSpeed = Speed;
     }
 
     private void OnDestroy()
