@@ -16,6 +16,9 @@ public class TrackManager : MonoBehaviour
     private GameObject nextTrackForward;
 
     [SerializeField]
+    private float activationDelay = 4f;
+
+    [SerializeField]
     private GameObject VG0;
     [SerializeField]
     private GameObject VG1;
@@ -328,13 +331,13 @@ public class TrackManager : MonoBehaviour
         switch (direction)
         {
             case SelectedDirection.Forward:
-                StartCoroutine(ActivateTrack(nextTrackForward, 2f));
+                StartCoroutine(ActivateTrack(nextTrackForward, activationDelay));
                 break;
             case SelectedDirection.Right:
-                StartCoroutine(ActivateTrack(nextTrackRight, 2f));
+                StartCoroutine(ActivateTrack(nextTrackRight, activationDelay));
                 break;
             case SelectedDirection.Left:
-                StartCoroutine(ActivateTrack(nextTrackLeft, 2f));
+                StartCoroutine(ActivateTrack(nextTrackLeft, activationDelay));
                 break;
         }
     }

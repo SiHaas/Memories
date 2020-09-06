@@ -89,12 +89,7 @@ public class UserDummy : MonoBehaviour
     private Vector3 referencePosition;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Topic" + topic);
-        Debug.Log("Number" + number);
-        Debug.Log("Vacation" + subbiomeVacation);
-        Debug.Log("Elementary" + subbiomeElementary);
-        Debug.Log("General" + generalChecker);
-        Debug.Log("MainTrack" + mainTrack);
+      
         Track track = other.GetComponentInParent<Track>();
         if (track != null)
         {
