@@ -3150,6 +3150,12 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 49c62efda2ad8e942981c62c7aef0269, type: 2}
+    - target: {fileID: 3638640849623406123, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4265966609892062587, guid: f33b6739d18266140beeee949576f191,
+        type: 2}
     - target: {fileID: 4317781830541173838, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_fontColor.r
@@ -3260,6 +3266,36 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 49c62efda2ad8e942981c62c7aef0269, type: 2}
+    - target: {fileID: 6038982062203402777, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038982062203402777, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.38823533
+      objectReference: {fileID: 0}
+    - target: {fileID: 6038982062203402777, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.17254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279484057830166419, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279484057830166419, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.38823533
+      objectReference: {fileID: 0}
+    - target: {fileID: 6279484057830166419, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.17254902
+      objectReference: {fileID: 0}
     - target: {fileID: 6972740480867416837, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
       propertyPath: m_Name
@@ -3279,6 +3315,21 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.043137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226928693413599253, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226928693413599253, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.38823533
+      objectReference: {fileID: 0}
+    - target: {fileID: 8226928693413599253, guid: 72674f0e331c57041b2408d6ce3be4bc,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.17254902
       objectReference: {fileID: 0}
     - target: {fileID: 8821652522180605706, guid: 72674f0e331c57041b2408d6ce3be4bc,
         type: 3}
