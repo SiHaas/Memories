@@ -31,4 +31,4 @@ Material:
     - _MirrorOnBack: 0
     - _Rotation: 0
     m_Colors:
-    - _Tint: {r: 0.7, g: 0.46, b: 0, a: 1}
+    - _Tint: {r: 0.06, g: 0.6, b: 1, a: 1}
