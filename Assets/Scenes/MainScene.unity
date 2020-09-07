@@ -3498,6 +3498,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 870977456}
     m_Modifications:
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6890380825958604129, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
         type: 3}
       propertyPath: m_Mesh
@@ -3581,7 +3601,7 @@ PrefabInstance:
     - target: {fileID: 8573533921098711572, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eaa40f53adc7254f9a95a8df9a6b503, type: 3}
