@@ -47,7 +47,7 @@ namespace TouchScript.Gestures.TransformGestures
             //float roationScale = 200f;
             float nextYRotation = playerCamera.transform.localRotation.eulerAngles.y + ManipulationGesture.DeltaPosition.x / Screen.width * RotationSpeed;
             float nextXRotation = playerCamera.transform.localRotation.eulerAngles.x  - ManipulationGesture.DeltaPosition.y / Screen.height * RotationSpeed;
-            Debug.Log(nextYRotation);
+            
             rotationCalculation(nextXRotation, nextYRotation);
 
 
@@ -81,7 +81,7 @@ namespace TouchScript.Gestures.TransformGestures
             } else if (rotationValueX > 40 && rotationValueX < 300) { 
                 rotationValueX = 40;
             }
-            Debug.Log(rotationValueX);
+            
             playerCamera.transform.localRotation = Quaternion.Euler(rotationValueX, rotationValueY, 0f);
             //else
             //{

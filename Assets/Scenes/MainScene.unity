@@ -1091,6 +1091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationDelay: 6.5
+  OriginalTrack: {fileID: 2061167391}
   VG0: {fileID: 672295172775222654, guid: f1e29157533c67d4b908c8aacc75bfc1, type: 3}
   VG1: {fileID: 672295172775222654, guid: d8800acb2f77e9742ac1636fc2a5f2a4, type: 3}
   VB0: {fileID: 672295172775222654, guid: 8c5eb8beb57f9644c9c9b45061a49af2, type: 3}
@@ -12285,6 +12286,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037618657}
   m_CullTransparentMesh: 0
+--- !u!1 &2061167391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 672295172775222654, guid: f1e29157533c67d4b908c8aacc75bfc1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2077464539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2077464539
 PrefabInstance:
   m_ObjectHideFlags: 0

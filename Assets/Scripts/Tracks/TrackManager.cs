@@ -19,6 +19,9 @@ public class TrackManager : MonoBehaviour
     private float activationDelay = 4f;
 
     [SerializeField]
+    private GameObject OriginalTrack;
+
+    [SerializeField]
     private GameObject VG0;
     [SerializeField]
     private GameObject VG1;
@@ -107,6 +110,9 @@ public class TrackManager : MonoBehaviour
                 tracks.RemoveAt(i);
                 i--;
             }
+           
+                
+            
         }
 
         // add new tracks
@@ -328,6 +334,11 @@ public class TrackManager : MonoBehaviour
 
     private void OnDirectionSelectedActiveTrack(SelectedDirection direction)
     {
+        if (OriginalTrack != null)
+        {
+            StartCoroutine(DestroyOriginal(OriginalTrack, 10f));
+            Debug.Log("Started Destroy Timer");
+        }
         switch (direction)
         {
             case SelectedDirection.Forward:
@@ -352,6 +363,12 @@ public class TrackManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         trackObject.SetActive(true);
+    }
+    private IEnumerator DestroyOriginal(GameObject startingTrack, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(startingTrack);
+        Debug.Log("Destroyed");
     }
 }
 

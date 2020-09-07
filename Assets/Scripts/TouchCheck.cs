@@ -28,7 +28,7 @@ public class TouchCheck : MonoBehaviour {
         //TwoFingerMoveGesture.Transformed += twoFingerTransformHandler;
         TippyTap = GetComponent<TapGesture>();
         TippyTap.Tapped += tapped;
-        Debug.Log("miau");
+        
     }
 
     private void OnDisable()
@@ -39,7 +39,7 @@ public class TouchCheck : MonoBehaviour {
 
     private void tapped (object sender, System.EventArgs e)
     {
-        Debug.Log("Tap");
+        
         Trigger1Text.SetActive(true);
         addMemoryTrigger.SetActive(true);
         //Color colorStart = Color.red;

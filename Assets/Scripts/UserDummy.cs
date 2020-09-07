@@ -142,7 +142,7 @@ public class UserDummy : MonoBehaviour
         if (selectedDirection == SelectedDirection.Right) // right
         {
             dir = GetDirection(referencePosition, currentTrack.Right.position);
-            Debug.Log("righttest");
+            
             changeRightTrack();
             // adjust rotation
             if (rotationCoroutine != null)
@@ -271,7 +271,7 @@ public class UserDummy : MonoBehaviour
 
     void changeLeftTrack()
     {
-        Debug.Log("changed Left");
+        
         generalChecker = 0;
         if (topic == 0)
         {
