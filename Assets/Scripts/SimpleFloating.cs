@@ -17,6 +17,8 @@ public class SimpleFloating : MonoBehaviour
     public Vector3 scaleAmplitude = Vector3.one * 0.1f;
     public Vector3 scaleSpeed = Vector3.one;
 
+    public float timeInterval = 0.1f;
+
     private Vector3 origPos;
     private Vector3 origRot;
     private Vector3 origScale;
@@ -29,12 +31,13 @@ public class SimpleFloating : MonoBehaviour
     private float randomYRot;
     private float randomZRot;
 
+    private bool initialized = false;
+    void Start()
+    {
+        Invoke(nameof(Init), 0.25f);
+    }
 
-
-    /**
-     * Awake
-     */
-    void Awake()
+    public void Init()
     {
         origPos = transform.position;
         origRot = transform.eulerAngles;
@@ -46,14 +49,15 @@ public class SimpleFloating : MonoBehaviour
         randomXRot = Random.Range(-0.2f, 0.2f);
         randomYRot = Random.Range(-0.2f, 0.2f);
         randomZRot = Random.Range(-0.2f, 0.2f);
-    }
-    
 
-    /**
-     * Update
-     */
-    void Update()
+        initialized = true;
+    }
+
+    private void FixedUpdate()
     {
+        if (!initialized)
+            return;
+
         /* position */
         if (animPos)
         {
@@ -77,11 +81,11 @@ public class SimpleFloating : MonoBehaviour
         /* scale */
         if (animScale)
         {
-            Vector3 scale;
-            scale.x = origScale.x * (1 + scaleAmplitude.x * Mathf.Sin(scaleSpeed.x * Time.time + startAnimOffset));
-            scale.y = origScale.y * (1 + scaleAmplitude.y * Mathf.Sin(scaleSpeed.y * Time.time + startAnimOffset));
-            scale.z = origScale.z * (1 + scaleAmplitude.z * Mathf.Sin(scaleSpeed.z * Time.time + startAnimOffset));
-            transform.localScale = scale;
+            //Vector3 scale;
+            //scale.x = origScale.x * (1 + scaleAmplitude.x * Mathf.Sin(scaleSpeed.x * Time.time + startAnimOffset));
+           // scale.y = origScale.y * (1 + scaleAmplitude.y * Mathf.Sin(scaleSpeed.y * Time.time + startAnimOffset));
+            //scale.z = origScale.z * (1 + scaleAmplitude.z * Mathf.Sin(scaleSpeed.z * Time.time + startAnimOffset));
+            //transform.localScale = scale;
         }
     }
 }

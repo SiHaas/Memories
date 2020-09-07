@@ -13,7 +13,7 @@ public class MemoryAddTrigger : MonoBehaviour
         //TwoFingerMoveGesture.Transformed += twoFingerTransformHandler;
         Touched = GetComponent<TapGesture>();
         Touched.Tapped += touched;
-        Debug.Log("miau");
+        
     }
     private void OnMouseDown()
     {

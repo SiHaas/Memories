@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TrackManager : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class TrackManager : MonoBehaviour
 
     [SerializeField]
     private GameObject OriginalTrack;
+
+    [SerializeField]
+    private TextMeshProUGUI leftButton;
+    [SerializeField]
+    private TextMeshProUGUI middleButton;
+    [SerializeField]
+    private TextMeshProUGUI rightButton;
 
     [SerializeField]
     private GameObject VG0;
@@ -168,10 +176,12 @@ public class TrackManager : MonoBehaviour
         if (UserDummy.topic == 0)
         {
             nextTrackRightPrefab = EG0;
+            rightButton.text = "Go to the Elementary School Area";
         }
         else
         {
             nextTrackRightPrefab = VG0;
+            rightButton.text = "Go to the Vacation Area";
         }
 
         return nextTrackRightPrefab;
@@ -186,15 +196,19 @@ public class TrackManager : MonoBehaviour
             {
                 case 0:
                     nextTrackLeftPrefab = VB0;
+                    leftButton.text = "Go to the Beach";
                     break;
                 case 1:
                     nextTrackLeftPrefab = VF0;
+                    leftButton.text = "Go to the Forest";
                     break;
                 case 2:
                     nextTrackLeftPrefab = VC0;
+                    leftButton.text = "Go to the City";
                     break;
                 case 3:
                     nextTrackLeftPrefab = VS0;
+                    leftButton.text = "Go to the snowy Moutain";
                     break;
             }
         }
@@ -204,12 +218,15 @@ public class TrackManager : MonoBehaviour
             {
                 case 0:
                     nextTrackLeftPrefab = EN0;
+                    leftButton.text = "Go to the Neighborhood";
                     break;
                 case 1:
                     nextTrackLeftPrefab = EC0;
+                    leftButton.text = "Go to the Classroom";
                     break;
                 case 2:
                     nextTrackLeftPrefab = EP0;
+                    leftButton.text = "Go to the Playground";
                     break;
             }
         }
@@ -230,24 +247,29 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForwardPrefab = VB1;
+                        middleButton.text = "Continue on the Beach";
                         SceneLogic.VB0.Invoke();
                         break;
                     case 1:
                         nextTrackForwardPrefab = VF1;
+                        middleButton.text = "Continue in the Forest";
                         SceneLogic.VF0.Invoke();
                         break;
                     case 2:
                         nextTrackForwardPrefab = VC1;
+                        middleButton.text = "Continue in the City";
                         SceneLogic.VC0.Invoke();
                         break;
                     case 3:
                         nextTrackForwardPrefab = VS1;
+                        middleButton.text = "Continue on the snowy Mountain";
                         SceneLogic.VS0.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForwardPrefab = VG1;
+                    middleButton.text = "Continue in the Vacation Area";
                     SceneLogic.VG0.Invoke();
                 }
             }
@@ -257,24 +279,29 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForwardPrefab = VB0;
+                        middleButton.text = "Continue on the Beach";
                         SceneLogic.VB1.Invoke();
                         break;
                     case 1:
                         nextTrackForwardPrefab = VF0;
+                        middleButton.text = "Continue in the Forest";
                         SceneLogic.VF1.Invoke();
                         break;
                     case 2:
                         nextTrackForwardPrefab = VC0;
+                        middleButton.text = "Continue in the City";
                         SceneLogic.VC1.Invoke();
                         break;
                     case 3:
                         nextTrackForwardPrefab = VS0;
+                        middleButton.text = "Continue on the snowy Moutain";
                         SceneLogic.VS1.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForwardPrefab = VG0;
+                    middleButton.text = "Continue in Vacation Area";
                     SceneLogic.VG1.Invoke();
                 }
             }
@@ -287,20 +314,24 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForwardPrefab = EN1;
+                        middleButton.text = "Continue in the Neighborhood";
                         SceneLogic.EN0.Invoke();
                         break;
                     case 1:
                         nextTrackForwardPrefab = EC1;
+                        middleButton.text = "Continue in the Classroom";
                         SceneLogic.EC0.Invoke();
                         break;
                     case 2:
                         nextTrackForwardPrefab = EP1;
+                        middleButton.text = "Continue in the Playground";
                         SceneLogic.EP0.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForwardPrefab = EG1;
+                    middleButton.text = "Continue in the Elementary School Area";
                     SceneLogic.EG0.Invoke();
                 }
             }
@@ -310,20 +341,24 @@ public class TrackManager : MonoBehaviour
                 {
                     case 0:
                         nextTrackForwardPrefab = EN0;
+                        middleButton.text = "Continue in the Neighborhood";
                         SceneLogic.EN1.Invoke();
                         break;
                     case 1:
                         nextTrackForwardPrefab = EC0;
+                        middleButton.text = "Continue in the Classroom";
                         SceneLogic.EC1.Invoke();
                         break;
                     case 2:
                         nextTrackForwardPrefab = EP0;
+                        middleButton.text = "Continue in the Playground";
                         SceneLogic.EP1.Invoke();
                         break;
                 }
                 if (UserDummy.generalChecker == 1)
                 {
                     nextTrackForwardPrefab = EG0;
+                    middleButton.text = "Continue in the Elementary School Area";
                     SceneLogic.EG1.Invoke();
                 }
             }

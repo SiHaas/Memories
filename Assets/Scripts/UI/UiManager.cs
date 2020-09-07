@@ -218,7 +218,8 @@ public class UiManager : MonoBehaviour
             uiState = UiState.MemoryList;
             memMemCapsuleList.SetActive(true);
             memMem.SetActive(false);
-            saveButton.gameObject.SetActive(true);
+            saveButton.gameObject.SetActive(false);
+            addButton.gameObject.SetActive(true);
         }
         else if(uiState == UiState.EditMemory)
         {
