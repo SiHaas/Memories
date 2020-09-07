@@ -961,8 +961,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 771968cbf5bfada4d92d12768c813ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testEnvironment: {fileID: 8440709829130722075, guid: ab2f8d78c198122499c8db69779f4a2a,
-    type: 3}
+  testEnvironment: {fileID: 0}
+  BiomeExposure: 0.2
+  VGColor: {r: 0.06, g: 0.6, b: 1, a: 1}
+  VBColor: {r: 0, g: 1, b: 1, a: 1}
+  VFColor: {r: 0.7, g: 0.46, b: 0, a: 1}
+  VCColor: {r: 0.21, g: 0.22, b: 0.37, a: 1}
+  VSColor: {r: 0, g: 0.17, b: 0.48, a: 1}
+  EGColor: {r: 0.79, g: 0.57, b: 0.4, a: 1}
+  ECColor: {r: 0.43, g: 0.35, b: 1, a: 1}
+  EPColor: {r: 0.23, g: 1, b: 0.23, a: 1}
+  ENColor: {r: 0, g: 0.65, b: 0, a: 1}
 --- !u!4 &136555262
 Transform:
   m_ObjectHideFlags: 0

@@ -28,6 +28,29 @@ public class SceneLogic : MonoBehaviour
     public static UnityAction <int> TestEnvironmentSpawnAction { get; set; }
     // Start is called before the first frame update
     public GameObject testEnvironment;
+
+    [SerializeField]
+    private float BiomeExposure = 0.2f;
+
+    [SerializeField]
+    Color VGColor = new Color(0.06f, 0.6f, 1f, 1f);
+    [SerializeField]
+    Color VBColor = new Color(0f, 1f, 1f, 1f);
+    [SerializeField]
+    Color VFColor = new Color(0.7f, 0.46f, 0f, 1f);
+    [SerializeField]
+    Color VCColor = new Color(0.21f, 0.22f, 0.37f, 1f);
+    [SerializeField]
+    Color VSColor = new Color(0f, 0.17f, 0.48f, 1f);
+    [SerializeField]
+    Color EGColor = new Color(0.79f, 0.57f, 0.4f, 1f);
+    [SerializeField]
+    Color ECColor = new Color(0.43f, 0.35f, 1f, 1f);
+    [SerializeField]
+    Color EPColor = new Color(0.23f, 1f, 0.23f, 1f);
+    [SerializeField]
+    Color ENColor = new Color(0f, 0.65f, 0f, 1f);
+
     private void Awake()
     {
         StartGameAction += StartGameFunction;
@@ -71,7 +94,8 @@ public class SceneLogic : MonoBehaviour
     }
     private void StartGameFunction()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VGColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
 
     private void TestEnvironmentSpawnFuction(int z)
@@ -83,75 +107,93 @@ public class SceneLogic : MonoBehaviour
 
     private void VG0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VGColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void VG1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VGColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void VB0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VBColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure); //1f
     }
     private void VB1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VBColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void VF0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VFColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure); //1f
     }
     private void VF1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VFColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void VC0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VCColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure); //1f
     }
     private void VC1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VCColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure); 
     }
     private void VS0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VSColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure); //1f
     }
     private void VS1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", VSColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EG0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", EGColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EG1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", EGColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EN0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", ENColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EN1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", ENColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EC0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", ECColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EC1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", ECColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EP0Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", EPColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
     private void EP1Function()
     {
-        Debug.Log("StartGameAction received");
+        RenderSettings.skybox.SetColor("_Tint", EPColor);
+        RenderSettings.skybox.SetFloat("_Exposure", BiomeExposure);
     }
 
 }
