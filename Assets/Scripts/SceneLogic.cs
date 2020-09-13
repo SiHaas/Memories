@@ -30,7 +30,7 @@ public class SceneLogic : MonoBehaviour
     public GameObject testEnvironment;
 
     [SerializeField]
-    private float BiomeExposure = 0.2f;
+    private float BiomeExposure = 1f;
 
     [SerializeField]
     Color VGColor = new Color(0.06f, 0.6f, 1f, 1f);
