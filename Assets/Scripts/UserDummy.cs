@@ -13,7 +13,7 @@ public enum SelectedDirection
 public class UserDummy : MonoBehaviour
 {
     [Range(0f, 1.5f)]
-    public float Speed = 4f;
+    public float Speed = 6f;
     private float temp;
     private Coroutine rotationCoroutine;
 

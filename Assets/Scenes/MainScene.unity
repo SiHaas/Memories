@@ -1102,7 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1c5e1155fef3341885118d1c374f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationDelay: 6.5
+  activationDelay: 3
   OriginalTrack: {fileID: 2061167391}
   leftButton: {fileID: 162984050}
   middleButton: {fileID: 526756046}
@@ -3518,6 +3518,36 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_text
+      value: Start/Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2111958829947019327, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091473584377255189, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: userDummy
+      value: 
+      objectReference: {fileID: 922897305}
+    - target: {fileID: 3091473584377255189, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6890380825958604129, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
         type: 3}
       propertyPath: m_Mesh
@@ -3592,6 +3622,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730195906656331469, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8573533921098711572, guid: 5eaa40f53adc7254f9a95a8df9a6b503,
         type: 3}
@@ -3724,7 +3759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecc550350d5b9642b35eb0d3f88e3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.04
+  Speed: 0.08
   RandomDirection: 0
   leftButton: {fileID: 1302210992}
   forwardButton: {fileID: 1451984347}

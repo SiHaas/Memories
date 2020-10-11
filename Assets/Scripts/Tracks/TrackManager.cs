@@ -17,7 +17,7 @@ public class TrackManager : MonoBehaviour
     private GameObject nextTrackForward;
 
     [SerializeField]
-    private float activationDelay = 4f;
+    private float activationDelay = 3f;
 
     [SerializeField]
     private GameObject OriginalTrack;
